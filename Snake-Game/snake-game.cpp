@@ -182,4 +182,5 @@ int main() {
         moved = false;
         Sleep(SPEED);
     }
+    return 0;
 }
