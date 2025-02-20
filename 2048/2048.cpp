@@ -170,4 +170,6 @@ int main() {
         renderGrid();
         window.display();
     }
+
+    return 0;
 }
