@@ -20,3 +20,13 @@ This game starts immediately with the snake moving. The snake will always be mov
 <p align="center">
   <img src="https://github.com/user-attachments/assets/ea6d5279-a1a7-449f-86b5-c75770f765ac" width="450" />
 </p>
+
+
+## 2048
+This projet is an implementation of the original 2048 game using the SFML (version 3.0.0) library. Players can move blocks in one of four directions at a time to combine them and hopefully achieve the coveted 2048 block or higher.
+
+This game starts immediately with two 2 blocks to be moved. The user can can make moves by using the WASD keys or the ↑←↓→ keys in order to move up, left, down, or right respectively. When moving in a corresponding direction, all blocks will move towards that direction. If two blocks bump into each other on the way to their destination, they will combine to form a block with a value twice the original. Once a valid move is made, a new 2 or 4 block will spawn in any available spaces. The game ends when the player can no longer make any valid moves, meaning the grid is full and there are no adjacent blocks with the same value.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a7fa4ea5-5c33-4fc1-9678-1901f6a20ebe" width="400" />
+</p>
