@@ -1,15 +1,15 @@
 # C++ Minigames
 This repository contains several C++ files with minigames:
 
-- [Connect 4](https://github.com/Edoubek1024/CPP-Minigames/blob/main/README.md#connect-4)
+- [Connect 4](https://github.com/Edoubek1024/CPP-Minigames/tree/main?tab=readme-ov-file#connect-4)
 
-- [Tic-Tac-Toe](https://github.com/Edoubek1024/CPP-Minigames/blob/main/README.md#tic-tac-toe)
+- [Tic-Tac-Toe](https://github.com/Edoubek1024/CPP-Minigames/tree/main?tab=readme-ov-file#tic-tac-toe)
 
-- [Snake](https://github.com/Edoubek1024/CPP-Minigames/blob/main/README.md#snake)
+- [Snake](https://github.com/Edoubek1024/CPP-Minigames/tree/main?tab=readme-ov-file#snake)
 
-- [2048](https://github.com/Edoubek1024/CPP-Minigames/blob/main/README.md#2048)
+- [2048](https://github.com/Edoubek1024/CPP-Minigames/tree/main?tab=readme-ov-file#2048)
 
-- [Minesweeper](https://github.com/Edoubek1024/CPP-Minigames/blob/main/README.md#minesweeper)
+- [Minesweeper](https://github.com/Edoubek1024/CPP-Minigames/tree/main?tab=readme-ov-file#minesweeper)
 
 ## Connect 4
 This project is a console-based implementation of a Connect Four game that supports 2-4 players. Players take turns dropping their "chips" into columns on the board, with the goal of being the first to connect four (get it?) chips in a row, column, or diagonal.
