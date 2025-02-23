@@ -25,6 +25,7 @@ std::set<std::array<int, 2>> display;
 sf::RenderWindow window(sf::VideoMode({(1350), (720)}), "Minesweeper");
 bool active;
 bool game_over;
+bool game_win;
 
 // Initializes variables
 void init() {
@@ -36,6 +37,7 @@ void init() {
     }
     active = false;
     game_over = false;
+    game_win = false;
 }
 
 // Handles the reveal mechanic in non-bomb cases
@@ -91,7 +93,7 @@ void gameInit(int x, int y) {
             for (int j = 0; j < 8; j++) {
                 int cx = gx + dx[j];
                 int cy = gy + dy[j];
-                if (grid[cx][cy] == -1) {
+                if (grid[cx][cy] == -1 && cy >= 0 && cy < 16 && cx >= 0 && cx < 30) {
                     count++;
                 }
             }
@@ -143,6 +145,9 @@ void renderGrid() {
                 window.draw(rectangle);
                 if (grid[x][y] == -1) {
                     rectangle.setFillColor(sf::Color::Red);
+                    if (game_win) {
+                        rectangle.setFillColor(sf::Color::Blue);
+                    }
                     window.draw(rectangle);
                     sf::CircleShape circle(15.f);
                     circle.setPosition(sf::Vector2f(x * 45 + 7.5, y * 45 + 7.5));
@@ -159,7 +164,7 @@ void renderGrid() {
             }
         }
     }
-    window.setTitle("Minesweeper (" + std::to_string(flags_used) + "/100 bombs marked)");
+    window.setTitle("Minesweeper (" + std::to_string(flags_used) + "/99 bombs marked)");
 }
 
 // Handles any events from the user
@@ -188,6 +193,8 @@ void eventHandler() {
                     dfsCheck(square_x, square_y);
                     if (grid[square_x][square_y] == -1) {
                         game_over = true;
+                    } else if (display.size() == 381) {
+                        game_win = true;
                     }
                 }
             } else if (event.mouseButton.button == sf::Mouse::Right) {
@@ -200,7 +207,7 @@ void eventHandler() {
 }
 
 // Carries out the end-of-game procedure
-void gameOver() {
+void gameOver(std::string message) {
     for (int x = 0; x < 30; x++) {
         for (int y = 0; y < 16; y++) {
             if (grid[x][y] == -1 && display.find({x, y}) == display.end()) {
@@ -211,7 +218,7 @@ void gameOver() {
     renderGrid();
     window.display();
     for (int i = 5; i >= 0; i--) {
-        window.setTitle("Game Over! Terminating in " + std::to_string(i) + "...");
+        window.setTitle(message + " Terminating in " + std::to_string(i) + "...");
         Sleep(1000);
     }
     window.close();
@@ -227,7 +234,9 @@ int main() {
         renderGrid();
         window.display();
         if (game_over) {
-            gameOver();
+            gameOver("Game over!");
+        } else if (game_win) {
+            gameOver("You win!");
         }
     }
     return 0;
