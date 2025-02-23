@@ -23,10 +23,19 @@ This game starts immediately with the snake moving. The snake will always be mov
 
 
 ## 2048
-This projet is an implementation of the original 2048 game using the SFML (version 3.0.0) library. Players can move blocks in one of four directions at a time to combine them and hopefully achieve the coveted 2048 block or higher.
+This project is an implementation of the original 2048 game using the SFML (version 3.0.0) library. Players can move blocks in one of four directions at a time to combine them and hopefully achieve the coveted 2048 block or higher.
 
 This game starts immediately with two 2 blocks to be moved. The user can can make moves by using the WASD keys or the ↑←↓→ keys in order to move up, left, down, or right respectively. When moving in a corresponding direction, all blocks will move towards that direction. If two blocks bump into each other on the way to their destination, they will combine to form a block with a value twice the original. Once a valid move is made, a new 2 or 4 block will spawn in any available spaces. The game ends when the player can no longer make any valid moves, meaning the grid is full and there are no adjacent blocks with the same value.
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/a7fa4ea5-5c33-4fc1-9678-1901f6a20ebe" width="400" />
+</p>
+
+
+## Minesweeper
+This project is an implementation of the minesweeper game using the SFML (version 3.0.0) library. Players can check squares with the risk of accidentally hitting a mine. The player wins if they can find all spaces not containing a mine based on the numerical hints found. The player loses if they hit a mine.
+
+This game starts as soon as the player chooses their first square by left clicking. The player can then proceed to right click on squares they think contain a mine, placing a flag there so that they don't click on it. Dug up squares appear grey in color while undug squares appear green. Once a square has been dug up, there can be a hint underneath, revealing how many mines are in the surrounding eight blocks. These hints range from one to eight and can only be uncovered once an undug square is clicked. If a player hits a mine, all mine positions will be shown and the game will terminate.
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d9876b64-0db0-45e1-b461-e981c21071d6" width="800" />
 </p>
