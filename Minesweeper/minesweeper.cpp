@@ -29,6 +29,12 @@ bool game_win;
 
 // Initializes variables
 void init() {
+
+    sf::Image icon;
+    if (icon.loadFromFile("sprites/Flag.png")) {
+        window.setIcon(icon.getSize().x, icon.getSize().y, icon.getPixelsPtr());
+    }
+
     for (int i = 0; i < 480; i++) {
         grid[i % 30][i / 30] = 0;
     }
